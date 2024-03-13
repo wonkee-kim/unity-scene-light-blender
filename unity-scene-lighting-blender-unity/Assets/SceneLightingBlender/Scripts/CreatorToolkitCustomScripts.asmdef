@@ -1,0 +1,21 @@
+{
+    "name": "CreatorToolkitCustomScripts",
+    "rootNamespace": "",
+    "references": [
+        "SpatialSys.UnitySDK",
+        "Unity.TextMeshPro",
+        "Unity.Mathematics",
+        "Unity.RenderPipelines.Universal.Runtime",
+        "Unity.RenderPipelines.Core.Runtime",
+        "Unity.Burst"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
