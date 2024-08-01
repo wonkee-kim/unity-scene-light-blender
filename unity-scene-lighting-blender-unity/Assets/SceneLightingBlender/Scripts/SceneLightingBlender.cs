@@ -4,14 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Experimental.Rendering;
- 
+
 using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Mathematics;
 using Unity.Jobs;
 using Unity.Burst;
-
-// using GraphicTools;
 
 namespace SceneLightingBlender
 {
@@ -70,8 +68,8 @@ namespace SceneLightingBlender
         private void Update()
         {
 #if UNITY_EDITOR
-        if (!_UpdateInEditor)
-            return;
+            if (!_UpdateInEditor)
+                return;
 #endif
             if (_blendFactorCached != _blendFactor)
             {
@@ -110,6 +108,10 @@ namespace SceneLightingBlender
 
         private void UpdateLightmap(Texture2D[] lightmaps, Color mainLightColor, float mainLightIntensity, float mainLightTemperature, float skyboxIntensity, Texture[] reflectionProbes, Texture defaultReflectionCubemap, SphericalHarmonicsL2[] bakedLightProbes)
         {
+            if (_lightmapData == null)
+            {
+                _lightmapData = LightmapSettings.lightmaps;
+            }
             // Apply Lightmap Textures
             for (int i = 0; i < _lightmapData.Length; i++)
             {
